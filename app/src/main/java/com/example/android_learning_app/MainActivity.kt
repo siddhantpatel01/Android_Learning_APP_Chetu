@@ -13,7 +13,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.
         binding.btnWebView.setOnClickListener {
             val intent = Intent(this , show_view::class.java)
             startActivity(intent)

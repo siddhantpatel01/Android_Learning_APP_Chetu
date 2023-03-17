@@ -21,6 +21,9 @@ open class show_view : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityShowViewBinding.inflate(layoutInflater)
+        binding.reload.setOnRefreshListener {
+            binding.reload.setRefreshing(true);
+        }
         setContentView(binding.root)
         binding.show.webViewClient = show_web_view()
 
@@ -29,6 +32,7 @@ open class show_view : AppCompatActivity() {
         binding.show.settings.javaScriptEnabled = true
         binding.show.webViewRenderProcess
         getSupportActionBar()?.hide()
+
     }
     inner class show_web_view : WebViewClient(){
         override fun onPageFinished(view: WebView?, url: String?) {
