@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
             android:layout_marginTop="40dp"
-            android:text="show web view"
+            android:text="show web view *"
             app:cornerRadius="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +63,7 @@
             app:layout_constraintTop_toBottomOf="@+id/progress_bar" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/alert_dialog"
+            android:id="@+id/alert_dialogs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
             android:layout_marginTop="15dp"
-            android:text="date picker"
+            android:text="date picker *"
             app:cornerRadius="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -132,7 +132,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/custom_snackbar" />
-
         <com.google.android.material.button.MaterialButton
             android:id="@+id/email"
             android:layout_width="match_parent"
@@ -144,7 +143,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/dial" />
-
         <com.google.android.material.button.MaterialButton
             android:id="@+id/call"
             android:layout_width="match_parent"
@@ -156,25 +154,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/email"
-
             app:layout_constraintBottom_toBottomOf="parent"
-
-
             />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
