@@ -1,80 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Implicit_Intent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_web_view"
+            android:id="@+id/call"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
             android:layout_marginTop="40dp"
-            android:text="show web view *"
+            android:text="Action call"
             app:cornerRadius="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/All_dialogs"
+            android:id="@+id/dial"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
             android:layout_marginTop="15dp"
-            android:text="All dialogs"
+            android:text="Action dial"
             app:cornerRadius="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_web_view" />
+            app:layout_constraintTop_toBottomOf="@+id/call" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/Implecit_Intent"
+            android:id="@+id/view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
             android:layout_marginTop="15dp"
-            android:text="Implicit Intent"
+            android:text="Action View"
             app:cornerRadius="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/All_dialogs" />
+            app:layout_constraintTop_toBottomOf="@+id/dial" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/Explicit_Intent"
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
             android:layout_marginTop="15dp"
-            android:text="Explicit Intent"
+            android:text="Action email"
             app:cornerRadius="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Implecit_Intent" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/Data_Binding"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="30dp"
-            android:layout_marginTop="15dp"
-            android:text="Data Binding"
-            app:cornerRadius="25dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Explicit_Intent" />
-
-
+            app:layout_constraintTop_toBottomOf="@+id/view" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

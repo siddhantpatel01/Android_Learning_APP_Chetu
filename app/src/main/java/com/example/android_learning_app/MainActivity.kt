@@ -1,12 +1,15 @@
 package com.example.android_learning_app
 
-import android.app.DatePickerDialog
 import android.content.Intent
+import android.icu.text.SimpleDateFormat
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.android_learning_app.databinding.ActivityAllDialogsBinding
 import com.example.android_learning_app.databinding.ActivityMainBinding
+import com.google.android.material.datepicker.MaterialDatePicker
 import java.util.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -20,9 +23,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 //            val intent = Intent(this , show_view::class.java)
 //            startActivity(intent)
 //        }
+        binding.AllDialogs.setOnClickListener(this)
         binding.btnWebView.setOnClickListener(this)
-        binding.datepicker.setOnClickListener(this)
-
+        binding.ImplecitIntent.setOnClickListener(this)
+        binding.ExplicitIntent.setOnClickListener(this)
+        binding.DataBinding.setOnClickListener(this)
+       // binding.datepicker.setOnClickListener(this)
 
     }
 
@@ -32,45 +38,53 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 val intent = Intent(this, show_view::class.java)
                 startActivity(intent)
             }
-            R.id.datepicker -> {
-                // on below line we are getting
-                // the instance of our calendar.
-                val c = Calendar.getInstance()
-
-                // on below line we are getting
-                // our day, month and year.
-                val year = c.get(Calendar.YEAR)
-                val month = c.get(Calendar.MONTH)
-                val day = c.get(Calendar.DAY_OF_MONTH)
-
-                // on below line we are creating a
-                // variable for date picker dialog.
-                val datePickerDialog = DatePickerDialog(
-                    // on below line we are passing context.
-                    this,
-                    { view, year, monthOfYear, dayOfMonth ->
-                        // on below line we are setting
-                        // date to our text view.
-
-                        selectedDateTV.text =
-                            (dayOfMonth.toString() + "-" + (monthOfYear + 1) + "-" + year)
-                    },
-                    // on below line we are passing year, month
-                    // and day for the selected date in our date picker.
-                    year,
-                    month,
-                    day
-                )
-                // at last we are calling show
-                // to display our date picker dialog.
-                datePickerDialog.show()
-
-//                val intent = Intent(this,Date_picker::class.java)
-//                startActivity(intent)
-
+            R.id.All_dialogs ->{
+                val intent = Intent(this,All_dialogs::class.java)
+                startActivity(intent)
             }
+            R.id.Implecit_Intent ->{
+                val intent = Intent(this,Implicit_Intent::class.java)
+                startActivity(intent)
+            }
+            R.id.Explicit_Intent ->{
+                val intent = Intent(this,Explicit_Intent::class.java)
+                startActivity(intent)
+            }
+            R.id.Data_Binding ->{
+                val intent = Intent(this,DataBinding::class.java)
+                startActivity(intent)
+            }
+
+//            R.id.datepicker -> {
+//                MaterialDatePicker.Builder.datePicker().build()
+//                    .show(supportFragmentManager, "DATE PICKER")
+//                val datePickerBuilder = MaterialDatePicker.Builder.datePicker()
+//                datePickerBuilder.setTitleText("SELECT UR DOB")
+//                val datePicker = datePickerBuilder.build()
+//
+//
+//                datePicker.show(supportFragmentManager, "DATE")
+//                datePicker.addOnPositiveButtonClickListener {
+//                    val calender = Calendar.getInstance()
+//                    calender.time = Date(it)
+//                    val DAY = calender.get(Calendar.DAY_OF_MONTH)
+//                    val MONTH = calender.get(Calendar.MONTH) + 1
+//                    val YEAR = calender.get(Calendar.YEAR)
+//
+//                    Toast.makeText(this@MainActivity, "$DAY / $MONTH / $YEAR", Toast.LENGTH_SHORT)
+//                        .show()
+//                    val simpelDateFormat = SimpleDateFormat("dd/MM/yyyy")
+//                    val selectedDate = simpelDateFormat.format(Date(it))
+//                    Toast.makeText(
+//                        this@MainActivity,
+//                        "You have selected: $selectedDate",
+//                        Toast.LENGTH_SHORT
+//                    ).show()
+//                }
+//            }
         }
+
+
+
     }
-
-
 }

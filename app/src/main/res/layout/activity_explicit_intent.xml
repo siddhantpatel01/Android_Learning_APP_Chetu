@@ -1,80 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Explicit_Intent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_web_view"
+            android:id="@+id/Intent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
             android:layout_marginTop="40dp"
-            android:text="show web view *"
+            android:text="Intent"
             app:cornerRadius="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/All_dialogs"
+            android:id="@+id/Intent_Bundle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
             android:layout_marginTop="15dp"
-            android:text="All dialogs"
+            android:text="Intent Bundle"
             app:cornerRadius="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_web_view" />
+            app:layout_constraintTop_toBottomOf="@+id/Intent" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/Implecit_Intent"
+            android:id="@+id/Serializable"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
             android:layout_marginTop="15dp"
-            android:text="Implicit Intent"
+            android:text="Serializable"
             app:cornerRadius="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/All_dialogs" />
+            app:layout_constraintTop_toBottomOf="@+id/Intent_Bundle" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/Explicit_Intent"
+            android:id="@+id/Parcelable_method"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
             android:layout_marginTop="15dp"
-            android:text="Explicit Intent"
+            android:text="Parcelable"
             app:cornerRadius="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Implecit_Intent" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/Data_Binding"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="30dp"
-            android:layout_marginTop="15dp"
-            android:text="Data Binding"
-            app:cornerRadius="25dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Explicit_Intent" />
-
-
+            app:layout_constraintTop_toBottomOf="@+id/Serializable" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

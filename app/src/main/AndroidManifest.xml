@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
 
     <application
         android:allowBackup="true"
@@ -14,6 +16,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_Learning_APP"
         tools:targetApi="31">
+        <activity
+            android:name=".DataBinding"
+            android:exported="false" />
+        <activity
+            android:name=".Explicit_Intent"
+            android:exported="false" />
+        <activity
+            android:name=".Implicit_Intent"
+            android:exported="false" />
+        <activity
+            android:name=".All_dialogs"
+            android:exported="false" />
         <activity
             android:name=".Date_picker"
             android:exported="false" />
