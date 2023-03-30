@@ -4,18 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.Date_picker">
-
-    <TextView
-        android:id="@+id/set_text"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="hello "
-        android:gravity="center"
-        android:textSize="30dp"
-        android:textColor="@color/black"
-
-        />
-
+    tools:context=".Activity.Livedata_viewModel_Project">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

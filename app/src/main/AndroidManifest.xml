@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -17,25 +16,28 @@
         android:theme="@style/Theme.Android_Learning_APP"
         tools:targetApi="31">
         <activity
-            android:name=".DataBinding"
+            android:name=".Activity.Livedata_viewModel_Project"
             android:exported="false" />
         <activity
-            android:name=".Explicit_Intent"
+            android:name=".Activity.DataBinding"
             android:exported="false" />
         <activity
-            android:name=".Implicit_Intent"
+            android:name=".Activity.Explicit_Intent"
             android:exported="false" />
         <activity
-            android:name=".All_dialogs"
+            android:name=".Activity.Implicit_Intent"
             android:exported="false" />
         <activity
-            android:name=".Date_picker"
+            android:name=".Activity.All_dialogs"
             android:exported="false" />
         <activity
-            android:name=".show_view"
+            android:name=".Activity.Date_picker"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.show_view"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

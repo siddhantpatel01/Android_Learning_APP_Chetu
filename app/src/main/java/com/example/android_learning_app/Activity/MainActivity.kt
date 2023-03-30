@@ -1,16 +1,12 @@
-package com.example.android_learning_app
+package com.example.android_learning_app.Activity
 
 import android.content.Intent
-import android.icu.text.SimpleDateFormat
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.android_learning_app.databinding.ActivityAllDialogsBinding
+import com.example.android_learning_app.R
 import com.example.android_learning_app.databinding.ActivityMainBinding
-import com.google.android.material.datepicker.MaterialDatePicker
-import java.util.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityMainBinding
@@ -39,19 +35,19 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(intent)
             }
             R.id.All_dialogs ->{
-                val intent = Intent(this,All_dialogs::class.java)
+                val intent = Intent(this, All_dialogs::class.java)
                 startActivity(intent)
             }
             R.id.Implecit_Intent ->{
-                val intent = Intent(this,Implicit_Intent::class.java)
+                val intent = Intent(this, Implicit_Intent::class.java)
                 startActivity(intent)
             }
             R.id.Explicit_Intent ->{
-                val intent = Intent(this,Explicit_Intent::class.java)
+                val intent = Intent(this, Explicit_Intent::class.java)
                 startActivity(intent)
             }
             R.id.Data_Binding ->{
-                val intent = Intent(this,DataBinding::class.java)
+                val intent = Intent(this, DataBinding::class.java)
                 startActivity(intent)
             }
 

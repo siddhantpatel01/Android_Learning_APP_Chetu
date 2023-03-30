@@ -1,4 +1,4 @@
-package com.example.android_learning_app
+package com.example.android_learning_app.Activity
 
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -8,6 +8,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.example.android_learning_app.R
 import com.example.android_learning_app.databinding.ActivityImplicitIntentBinding
 
 class Implicit_Intent : AppCompatActivity(), View.OnClickListener {
