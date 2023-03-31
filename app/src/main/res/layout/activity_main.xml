@@ -6,21 +6,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.MainActivity">
+    tools:context=".Activity.DashboardActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="@dimen/margin_top_5dp"
         >
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_web_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="@dimen/margin_top_5dp"
             android:text="show web view *"
-            app:cornerRadius="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -29,10 +28,8 @@
             android:id="@+id/All_dialogs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="@dimen/margin_top_5dp"
             android:text="All dialogs"
-            app:cornerRadius="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_web_view" />
@@ -41,10 +38,8 @@
             android:id="@+id/Implecit_Intent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="@dimen/margin_top_5dp"
             android:text="Implicit Intent"
-            app:cornerRadius="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/All_dialogs" />
@@ -53,10 +48,8 @@
             android:id="@+id/Explicit_Intent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="@dimen/margin_top_5dp"
             android:text="Explicit Intent"
-            app:cornerRadius="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Implecit_Intent" />
@@ -65,17 +58,20 @@
             android:id="@+id/Data_Binding"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="@dimen/margin_top_5dp"
             android:text="Data Binding"
-            app:cornerRadius="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Explicit_Intent" />
-
-
-
-
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_coroutine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_5dp"
+            android:text="Coroutine Concept"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Explicit_Intent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

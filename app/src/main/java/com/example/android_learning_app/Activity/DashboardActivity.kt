@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.android_learning_app.R
 import com.example.android_learning_app.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class DashboardActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityMainBinding
     lateinit var selectedDateTV: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding.ImplecitIntent.setOnClickListener(this)
         binding.ExplicitIntent.setOnClickListener(this)
         binding.DataBinding.setOnClickListener(this)
+        binding.btnCoroutine.setOnClickListener(this)
        // binding.datepicker.setOnClickListener(this)
 
     }
@@ -49,6 +50,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.Data_Binding ->{
                 val intent = Intent(this, DataBinding::class.java)
                 startActivity(intent)
+            }
+            R.id.btn_coroutine ->{
+                startActivity(Intent(this, CoroutineDemoActivity::class.java))
             }
 
 //            R.id.datepicker -> {
