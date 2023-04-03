@@ -25,6 +25,7 @@ class DashboardActivity : AppCompatActivity(), View.OnClickListener {
         binding.ExplicitIntent.setOnClickListener(this)
         binding.DataBinding.setOnClickListener(this)
         binding.btnCoroutine.setOnClickListener(this)
+        binding.btnSharedpreference.setOnClickListener(this)
        // binding.datepicker.setOnClickListener(this)
 
     }
@@ -53,6 +54,10 @@ class DashboardActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.btn_coroutine ->{
                 startActivity(Intent(this, CoroutineDemoActivity::class.java))
+            }
+
+            R.id.btn_sharedpreference ->{
+                startActivity(Intent(this, SharedPrefsActivity::class.java))
             }
 
 //            R.id.datepicker -> {

@@ -72,6 +72,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Explicit_Intent" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_sharedpreference"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_5dp"
+            android:text="SharedPreference Concept"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_coroutine" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

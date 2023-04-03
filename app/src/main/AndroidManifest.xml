@@ -15,7 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_Learning_APP"
         tools:targetApi="31">
-        <activity android:name=".Activity.CoroutineDemoActivity"/>
+        <activity
+            android:name=".Activity.SharedPrefsActivity"
+            android:exported="false" />
+        <activity android:name=".Activity.CoroutineDemoActivity" />
         <activity
             android:name=".Activity.Livedata_viewModel_Project"
             android:exported="false" />
@@ -42,6 +45,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
