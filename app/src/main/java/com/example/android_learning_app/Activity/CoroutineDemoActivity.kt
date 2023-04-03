@@ -8,12 +8,14 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.android_learning_app.R
 import com.example.android_learning_app.databinding.ActivityCoroutineDemoBinding
+import com.example.android_learning_app.kotlinConcepts.BusinessLogic
 import kotlinx.coroutines.*
 
 class CoroutineDemoActivity : AppCompatActivity(), View.OnClickListener {
     lateinit var binding: ActivityCoroutineDemoBinding
     var count: Int = 0
     val TAG = "Coroutine_Coroutine"
+     lateinit var exception: CoroutineExceptionHandler
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +25,13 @@ class CoroutineDemoActivity : AppCompatActivity(), View.OnClickListener {
         binding.btnClick.setOnClickListener(this)
         binding.btnDownload.setOnClickListener(this)
         binding.btnAsync.setOnClickListener(this)
+        binding.btnExceptionHandler.setOnClickListener(this)
+
+       exception =  CoroutineExceptionHandler { coroutineContext, throwable ->
+            Log.d(TAG, " CoroutineExceptionHandler handled")
+        }
     }
+
 
     override fun onClick(view: View?) {
         when(view?.id){
@@ -33,7 +41,12 @@ class CoroutineDemoActivity : AppCompatActivity(), View.OnClickListener {
             }
             
             R.id.btn_download ->{
-                downloading()
+//                downloading()
+
+                CoroutineScope(Dispatchers.Main).launch {
+                    val total = BusinessLogic().getOutPut()
+                    Log.d("TotalCount", "onClick: $total")
+                }
             }
 
             R.id.btn_async ->{
@@ -49,6 +62,33 @@ class CoroutineDemoActivity : AppCompatActivity(), View.OnClickListener {
                     val totalTime2 = task2.await()
                     Log.d(TAG, "Total Time taken1 $totalTime1")
                     Log.d(TAG, "Total Time taken2 $totalTime2")
+                }
+            }
+
+            R.id.btn_exception_handler ->{
+                CoroutineScope(Dispatchers.Main).launch(exception){
+                    val child1 = launch { 
+                        delay(2000)
+                        Log.d(TAG, "onClick: Child 1")
+
+                        throw CancellationException("Cancelation occured")
+//                        throw Exception("Exception occured...")
+//                        val i = 10/0
+//                        Log.d(TAG, "onClick: $i")
+//                        try{
+//                            val i = 10/0
+//                        }catch (e: Exception){
+//                            Log.d(TAG, "Exception  handle")
+//                        }
+                    }
+                    
+                    val child2 = launch { 
+                        delay(4000)
+                        Log.d(TAG, "onClick: Child2")
+                    }
+
+//                    child1.cancel()
+                    Log.d(TAG, "onClick: Parent")
                 }
             }
         }
@@ -95,4 +135,8 @@ class CoroutineDemoActivity : AppCompatActivity(), View.OnClickListener {
             return@async
         }
     }
+
+
+
+
 }
