@@ -4,6 +4,9 @@ import android.app.ActionBar
 import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.ContextMenu
+import android.view.MenuItem
 import android.view.View
 import android.view.WindowManager
 import android.widget.AdapterView
@@ -12,6 +15,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.android_learning_app.R
+import com.example.android_learning_app.adapters.ListViewAdapter
 import com.example.android_learning_app.databinding.ActivityDetailsBinding
 import com.example.android_learning_app.databinding.LayoutCreateDataBinding
 import com.example.android_learning_app.factory.DetailsActivityViewModelFactory
@@ -19,11 +23,13 @@ import com.example.android_learning_app.repository.SqliteDBRepository
 import com.example.android_learning_app.viewModels.DetailsActivtyViewModel
 
 class DetailsActivity : AppCompatActivity(),
-    View.OnClickListener/*, AdapterView.OnItemSelectedListener*/ {
+    View.OnClickListener, AdapterView.OnItemClickListener,
+    AdapterView.OnItemLongClickListener/*, AdapterView.OnItemSelectedListener*/ {
     lateinit var binding: ActivityDetailsBinding
 //    val data = arrayOf("AA", "BB", "CC", "DD", "EE")
     lateinit var factory: DetailsActivityViewModelFactory
     lateinit var viewModel: DetailsActivtyViewModel
+    private var rowId = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,6 +46,15 @@ class DetailsActivity : AppCompatActivity(),
         viewModel = ViewModelProvider(this, factory)[DetailsActivtyViewModel::class.java]
 
         binding.btnCreateData.setOnClickListener(this)
+
+//        Log.d("listOfStudents", " $listOfStudents")
+
+//        val arrayAdaper = ArrayAdapter(this, android.R.layout.simple_list_item_1, data)
+//        binding.listView.adapter = arrayAdaper
+        setListview()
+//        binding.listView.setOnItemClickListener(this)
+        registerForContextMenu(binding.listView)
+        binding.listView.setOnItemLongClickListener(this)
     }
 
     override fun onClick(view: View?) {
@@ -56,8 +71,14 @@ class DetailsActivity : AppCompatActivity(),
 
         layoutCustomBinding.btnSubmit.setOnClickListener {
             viewModel.createData(layoutCustomBinding.tilFname.editText?.text.toString(), layoutCustomBinding.tilLname.editText?.text.toString(), layoutCustomBinding.tilPhone.editText?.text.toString())
+            setListview()
             dialog.dismiss()
         }
+    }
+
+    override fun onItemClick(adapter: AdapterView<*>?, view: View?, position: Int, rowItem: Long) {
+        val data = adapter!!.getItemAtPosition(position).toString()
+        Toast.makeText(this, "clicked $data", Toast.LENGTH_SHORT).show()
     }
 
 //    override fun onItemSelected(adapter: AdapterView<*>?, view: View?, position: Int, row: Long) {
@@ -69,4 +90,41 @@ class DetailsActivity : AppCompatActivity(),
 
 //
 //    }
+
+    fun setListview(){
+        val listOfStudents = viewModel.getAllData()
+        val myAdapter = ListViewAdapter(listOfStudents)
+        binding.listView.adapter = myAdapter
+    }
+
+    override fun onItemLongClick(adapter: AdapterView<*>?, view: View?, position: Int, p3: Long): Boolean {
+        rowId = position
+        return false
+    }
+
+    override fun onCreateContextMenu(
+        menu: ContextMenu?,
+        v: View?,
+        menuInfo: ContextMenu.ContextMenuInfo?
+    ) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+        menuInflater.inflate(R.menu.options_menu, menu)
+    }
+
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.item_delete -> {
+//                Toast.makeText(this, item.title, Toast.LENGTH_SHORT).show()
+                viewModel.deleteSingleRecord(rowId)
+                setListview()
+            }
+
+            R.id.item_update -> {
+                Toast.makeText(this, item.title, Toast.LENGTH_SHORT).show()
+            }
+        }
+        return super.onContextItemSelected(item)
+    }
+
 }
